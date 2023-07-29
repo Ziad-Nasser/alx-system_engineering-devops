@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#content of the current directory In a list format
+ls=$(ls)
+for i in $ls; do
+	echo "${i#*-}"
+done
