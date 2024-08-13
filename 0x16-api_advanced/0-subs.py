@@ -2,6 +2,7 @@
 """task zero."""
 import requests
 
+
 def number_of_subscribers(subreddit):
     """Return the number of subscribers on subreddit."""
 
