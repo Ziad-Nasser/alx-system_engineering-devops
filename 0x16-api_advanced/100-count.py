@@ -10,12 +10,12 @@ def count_words(subreddit, word_list, after=None, dic=None):
         dic = {word: 0 for word in word_list}
 
     url = f"https://www.reddit.com/r/{subreddit}/hot.json?after={after}"
-    res = requests.get(url, headers={'User-Agent': 'abeer'})
+    response = requests.get(url, headers={'User-Agent': 'abeer'})
 
-    if res.status_code != 200:
+    if response.status_code != 200:
         return
 
-    hot = res.json()
+    hot = response.json()
     for article in hot['data']['children']:
         for word in word_list:
             key_word = f" {word.lower()} "
