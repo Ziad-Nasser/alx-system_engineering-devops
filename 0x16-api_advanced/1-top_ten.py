@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-"""Using requests library"""
+"""task_1 requests library"""
 import requests
 
 
 def top_ten(subreddit):
     """Get Top ten from reddit API"""
-    api_url = f"https://www.reddit.com/r/{subreddit}/top.json?limit=10"
+    url = f"https://www.reddit.com/r/{subreddit}/top.json?limit=10"
 
     headers = {"User-Agent": "MyApp/1.0"}
 
-    response = requests.get(api_url, headers=headers, allow_redirects=False)
+    response = requests.get(url, headers=headers, allow_redirects=False)
 
     if response.status_code == 200:
         data = response.json()

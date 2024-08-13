@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-"""Using requests lib"""
+"""task_0 requests library"""
 import requests
 
 
 def number_of_subscribers(subreddit):
     """Get Subscriber from reddit API"""
-    api_url = f"https://www.reddit.com/r/{subreddit}/about.json"
+    url = f"https://www.reddit.com/r/{subreddit}/about.json"
 
     headers = {"User-Agent": "MyApp/1.0"}
 
-    response = requests.get(api_url, headers=headers, allow_redirects=False)
+    response = requests.get(url, headers=headers, allow_redirects=False)
 
     if response.status_code == 200:
         data = response.json()
